@@ -1,26 +1,29 @@
-# QR-CODE-GENERATOR
 
-pip install pyqrcode
+!pip install pyqrcode
+!pip install pypng
 
-pip install pypng
-
-# pyrcode is a module to generate QRcode
-import pyqrcode
-
-# pypng is a module to save image in png format
-import png 
+import pyqrcode  # pyqrcode is a module to generate QR codes
+import png  # pypng is a module to save images in png format
 from pyqrcode import QRCode
+from IPython.display import Image
 
-# String which denotes the QR code
-str = "Welcome to Bagheshri's world"
-# QR code generator  
-url = pyqrcode.create(str)
+# URL of your GitHub profile
+github_url = "https://github.com/BagheshriSK?tab=repositories"
 
-# Create and save the svg file with the name "myqr.svg"
-url.svg("Bagqr.svg", scale = 8) 
+# Generate the QR code
+url = pyqrcode.create(github_url)
 
-# Create and save the png file with the name "myqr.png"  
-url.png('Bagqr.png', scale = 6) # Create and save the png file with the name "myqr.png"
+# Create and save the SVG file with the name "github_profile.svg"
+url.svg("github_profile.svg", scale=8)
+
+# Create and save the PNG file with the name "github_profile.png"
+url.png('github_profile.png', scale=6)
+
+# Display the PNG file within the notebook
+display(Image(filename='github_profile.png'))
+
+print("QR code generated and saved as github_profile.svg and github_profile.png")
+
 
 
 
