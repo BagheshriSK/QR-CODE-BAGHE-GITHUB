@@ -29,3 +29,6 @@ print("QR code generated and saved as github_profile.svg and github_profile.png"
 
 
 
+
+
+
